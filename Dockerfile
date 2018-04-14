@@ -12,7 +12,10 @@ RUN yum install -y npm
 COPY . /src
 
 # Install app and dependencies into /src
-RUN cd /src; npm install
+RUN npm config set registry http://registry.npmjs.org/
+RUN cd /src; npm install install jsmin -g
+#RUN cd /src; npm install
+
 
 EXPOSE 8080
 
